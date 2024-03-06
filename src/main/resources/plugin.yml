@@ -1,0 +1,5 @@
+name: MiniRPG
+version: '${project.version}'
+main: me.srb.minirpg.MiniRPG
+api-version: '1.20'
+depend: [ 'Multiverse-Core', 'WorldEdit' ]

@@ -14,11 +14,9 @@ public class ItemStackDeserializer implements JsonDeserializer<ItemStack> {
         int amount = jsonObject.get("amount").getAsInt();
         Material material;
         try {
-            material = Material.valueOf(materialString); // Bez zamiany na wielkie litery
+            material = Material.valueOf(materialString);
         } catch (IllegalArgumentException e) {
-            // Obsługa błędu, na przykład jeśli materiał nie istnieje
-            e.printStackTrace();
-            return null;
+            throw new RuntimeException(e);
         }
         return new ItemStack(material, amount);
     }
